@@ -1,0 +1,158 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-image: url("../../src/assets/b4b09fb6-1ace-4e0a-a456-69a79ea993c0.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ec8d10;
+  border-radius: 30px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #f87000;
+
+}
+
+
+a {
+  color: whitesmoke;
+  text-decoration: none;
+}
+
+
+
+/*  text socialMedia Animation */
+.text-log {
+  animation: text infinite 2s;
+  display: block;
+}
+
+@keyframes text {
+
+  from {
+    color: rgb(112, 70, 6);
+    text-shadow: 1px 1px 1px black;
+  }
+
+  to {
+    color: #ffae00;
+    text-shadow: 3px 3px 2px #0a0700, 2px 2px 1px black;
+  }
+
+}
+
+
+
+/* fab scroll to bottom Animation */
+.scrollBottom {
+  animation: up-down infinite 1.5s;
+}
+
+@keyframes up-down {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+
+/* button navbar cart Animation */
+.cart-icon:hover {
+  transform: scale(1.1);
+}
+
+
+
+/* socialMedia Animation */
+.lightning-effect {
+  animation: jump-icon 2s infinite;
+}
+
+@keyframes jump-icon {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.05);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+
+
+
+
+/* loader */
+
+.loader {
+  color: orange;
+  margin: auto;
+  width: 30%;
+  aspect-ratio: 2;
+  --_g: no-repeat radial-gradient(circle closest-side, #ec8d10 90%, #0000);
+  background:
+    var(--_g) 0% 50%,
+    var(--_g) 50% 50%,
+    var(--_g) 100% 50%;
+  background-size: calc(100%/3) 50%;
+  animation: l3 1s infinite linear;
+}
+
+@keyframes l3 {
+  20% {
+    background-position: 0% 0%, 50% 50%, 100% 50%
+  }
+
+  40% {
+    background-position: 0% 100%, 50% 0%, 100% 50%
+  }
+
+  60% {
+    background-position: 0% 50%, 50% 100%, 100% 0%
+  }
+
+  80% {
+    background-position: 0% 50%, 50% 50%, 100% 100%
+  }
+}
+
+
+
+/* react slick */
+.slick-dots li button {
+  background-color: rgb(41, 40, 40) !important;
+  border-radius: 50% !important;
+}
+
+.slick-dots li.slick-active button {
+  background-color: rgb(255, 123, 0) !important;
+  /* رنگ توپ فعال */
+}

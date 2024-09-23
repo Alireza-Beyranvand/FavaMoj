@@ -1,0 +1,168 @@
+{
+    "main": {
+        "name": "Fava Moj",
+        "name2": "Electronics",
+        "transition": [
+            "Electrical Installations",
+            "Electrical Design",
+            "Network",
+            "Programming",
+            "Marketing",
+            "Sales",
+            "Construction Equipment"
+        ],
+        "buttonGo": "Let's go",
+        "buttonRepresentation": "Representatives",
+        "socialMediaTitle": "! Follow us",
+        "section3": "What services does our company offer?",
+        "tages": [
+            {
+                "name": "ATM",
+                "title": "ATM Machines",
+                "url": "#atm",
+                "description": "Sales of various ATM machines, cashless systems, card readers, and attendance systems"
+            },
+            {
+                "name": "Electronics",
+                "title": "Electronics",
+                "url": "#elec",
+                "description": "Execution of construction projects, installation, street lighting, and electrical distribution networks, etc."
+            },
+            {
+                "name": "Computer",
+                "title": "Computer",
+                "url": "#atm",
+                "description": "Sales of various laptops, computers, and accessories, repair, and support"
+            },
+            {
+                "name": "Construction",
+                "title": "Construction Equipment",
+                "url": "#buil",
+                "description": "Services related to construction including elevators, electrical network, and construction tools, etc."
+            },
+            {
+                "name": "Security",
+                "title": "Security Systems",
+                "url": "#camera",
+                "description": "Installation and sales of various security systems including cameras and burglar alarms"
+            },
+            {
+                "title": "Education",
+                "url": "#learn",
+                "description": "Training in various fields, programming, web design, etc."
+            },
+            {
+                "title": "Programming",
+                "url": "#developer",
+                "description": "Designing fully responsive websites with powerful and updated frameworks, accompanied by animation, content production for site SEO, back-end design, and database."
+            }
+        ],
+        "footerEmail": {
+            "Membership": "Newsletter Subscription",
+            "inputPlacehilder": "Email",
+            "buttonMembership": "Subscribe",
+            "title": "We are waiting for your comments and suggestions 😊",
+            "caption": "To contact us and receive tips, tricks, and updates, enter your email through the contact form"
+        },
+        "label": "Tags",
+        "informationCompanyFooter": {
+            "title": "FAVA MOJ ELECTORIC",
+            "address": "Khorramabad -square 22 bahman - favamoj Company"
+        },
+        "informationFooter": [
+            {
+                "title": "Commercial Center",
+                "items": [
+                    "Discounts",
+                    "Customers",
+                    "Try our cameras!"
+                ],
+                "links": [
+                    "/discounts",
+                    "/customers",
+                    "/cameras"
+                ]
+            },
+            {
+                "title": "Customer Services",
+                "items": [
+                    "Contact Us",
+                    "Frequently Asked Questions",
+                    "Privacy Policy",
+                    "Sales Terms",
+                    "Shipping Policy",
+                    "Returns and Exchanges"
+                ],
+                "links": [
+                    "/contact",
+                    "/faq",
+                    "/privacy",
+                    "/terms",
+                    "/shipping",
+                    "/returns"
+                ]
+            },
+            {
+                "title": "Resources",
+                "items": [
+                    "Learning Center",
+                    "Instructor Site",
+                    "Contact Instructors"
+                ],
+                "links": [
+                    "/learning",
+                    "/instructor",
+                    "/instructors"
+                ]
+            }
+        ],
+        "footerLast": "All rights reserved by Fava Moj Company"
+    },
+    "navbar": {
+        "SignIn": {
+            "ButtonName": "SignIn",
+            "Settings": "Settings",
+            "SignOut": "SignOut",
+            "dashbord": "dashbord",
+            "tooltip": "User Menu"
+        },
+        "navLink": [
+            {
+                "title": "Representatives",
+                "links": "/N"
+            },
+            {
+                "title": "Latest News",
+                "links": "/news"
+            },
+            {
+                "title": "About Us",
+                "links": "/about"
+            },
+            {
+                "title": "Home",
+                "links": "/"
+            }
+        ],
+        "megaMenu": [
+            {
+                "name": "News Channel link",
+                "link": "/news"
+            },
+            {
+                "name": "Rubika",
+                "link": "/roubika"
+            },
+            {
+                "name": "Eitaa",
+                "link": "/eitaa"
+            },
+            {
+                "name": "Contact with manager",
+                "link": "/admin"
+            }
+        ],
+        "buttonShop": "Shop",
+        "searchBox": "Search..."
+    }
+}
