@@ -1,6 +1,6 @@
 'use server'
 
-import { Box, Chip, Divider, Typography, useMediaQuery } from "@mui/material";
+import { Box, Chip, Divider, Typography, } from "@mui/material";
 import Grid from "@mui/material/Grid2";
 import Slick from "./Slick";
 import baner from "@/src/assets/COMPANY PROFILE.png"
@@ -8,13 +8,16 @@ import { Person } from "@mui/icons-material";
 import Image from "next/image";
 import SlickMobile from "./SlickMobile";
 import { options } from "@/src/constants/aboutData";
+import { cookies } from "next/headers";
+import DividerChip from "@/src/common/DividerChip/DividerChip";
 
 export async function generateMetadata() {
+    const cookie = cookies();
+    const cookieLang = cookie?.get("Language");
     return {
-        title: "درباره ما"
+        title: cookieLang?.value === "en-us" ? "about us" : " فاواموج | درباره ما "
     }
 }
-
 
 export default async function About() {
 
@@ -75,49 +78,10 @@ export default async function About() {
                             </Grid>
                         </Grid>
                     </Grid>
-                    <Divider sx={{
-                        pt: 4, "&::before , &::after": {
-                            borderColor: "warning.main"
-                        }
-                    }}>
-                        <Chip label={
-                            <Typography color="black" sx={{ fontSize: "3vh" }}>
-                                <Person sx={{
-                                    fontSize: "5vh",
-                                    color: "black",
-                                    verticalAlign: "middle",
-                                    pr: 1
-                                }} />
-                                مدیران
-                            </Typography>
-                        } variant="filled"
-                            color="warning"
-                            sx={{ px: "3vh", py: 4 }} />
-                    </Divider>
+                    <DividerChip title={"dividerChip1"} pageName={"about"} icon={true} />
                     <Slick options={options} />
                     <SlickMobile options={options} />
-                    <Divider sx={{
-                        pt: {
-                            xs: 0,
-                            md: 8
-                        }, "&::before , &::after": {
-                            borderColor: "warning.main"
-                        }
-                    }}>
-                        <Chip label={
-                            <Typography color="black" sx={{ fontSize: "3vh" }}>
-                                <Person sx={{
-                                    fontSize: "5vh",
-                                    color: "black",
-                                    verticalAlign: "middle",
-                                    pr: 1
-                                }} />
-                                پرسنل
-                            </Typography>
-                        } variant="filled"
-                            color="warning"
-                            sx={{ px: "3vh", py: 4 }} />
-                    </Divider>
+                    <DividerChip title={"dividerChip2"} pageName={"about"} icon={true} />
                     <Slick options={options} />
                     <SlickMobile options={options} />
                 </Box>

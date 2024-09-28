@@ -14,6 +14,8 @@
         "buttonGo": "بزن بریم",
         "buttonRepresentation": "نمایندگی ها",
         "socialMediaTitle": "! مارو دنبال کنید",
+        "applicationInstallButton": "نصب اپلیکیشن",
+        "descriptionInstallingApplication": "! شما میتونید اپلیکیشن مارو روی موبایل نصب کنید",
         "section3": "شرکت ما چه خدماتی رو ارائه میده؟",
         "tages": [
             {
@@ -162,7 +164,12 @@
                 "link": "/admin"
             }
         ],
+        "megaMenuButtonName": "ارتباط با ما",
         "buttonShop": "فروشگاه",
         "searchBox": "جستجو کنید ..."
+    },
+    "about": {
+        "dividerChip1": "مدیران",
+        "dividerChip2": "پرسنل"
     }
 }

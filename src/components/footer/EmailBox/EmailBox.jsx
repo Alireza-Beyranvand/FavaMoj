@@ -5,9 +5,15 @@ import { Box, Button, TextField, Typography, Zoom } from "@mui/material"
 import Grid from "@mui/material/Grid2";
 import { ForwardToInbox, } from "@mui/icons-material";
 import { useInView } from "react-intersection-observer";
+import { selectDictionary, selectSystemLanguage } from "@/store/slice/languageSlice";
+import { useSelector } from "react-redux";
 
 
-const EmailBox = ({ Language, dict }) => {
+const EmailBox = () => {
+
+
+    const dict = useSelector((state) => selectDictionary(state))
+    const Language = useSelector((state) => selectSystemLanguage(state))
 
 
     // for animation scroll
@@ -40,7 +46,7 @@ const EmailBox = ({ Language, dict }) => {
                             }}>
                                 <Box sx={{ display: "flex", gap: 1 }}>
                                     <Typography sx={{ fontSize: "1.5rem" }}>
-                                        {Language.main.footerEmail.Membership}
+                                        {Language?.main?.footerEmail?.Membership}
                                     </Typography>
                                     <ForwardToInbox sx={{
                                         fontSize: "2.1rem", display: {
@@ -50,14 +56,14 @@ const EmailBox = ({ Language, dict }) => {
                                     }} />
                                 </Box>
                                 <TextField size="small" sx={{ width: 1, mb: 1 }}
-                                    placeholder={Language.main.footerEmail.inputPlacehilder} />
+                                    placeholder={Language?.main?.footerEmail?.inputPlacehilder} />
                                 <Button variant="contained"
                                     sx={{
                                         backgroundColor: "black",
                                         color: "whitesmoke",
                                         width: 1 / 3
                                     }}>
-                                    {Language.main.footerEmail.buttonMembership}
+                                    {Language?.main?.footerEmail?.buttonMembership}
                                 </Button>
                             </Box>
                         </Grid>
@@ -69,14 +75,14 @@ const EmailBox = ({ Language, dict }) => {
                                 }, flexDirection: "column", alignItems: "end", gap: 3,
                             }} >
                                 <Typography sx={{ fontSize: "2vw", textAlign: "end" }}>
-                                    {Language.main.footerEmail.title}
+                                    {Language?.main?.footerEmail?.title}
                                 </Typography>
                                 <Typography sx={{
                                     fontSize: ".9rem",
                                     textAlign: "end",
                                     pl: dict.startsWith("en") ? 0 : 8
                                 }}>
-                                    {Language.main.footerEmail.caption}
+                                    {Language?.main?.footerEmail?.caption}
                                 </Typography>
                             </Box>
                         </Grid>

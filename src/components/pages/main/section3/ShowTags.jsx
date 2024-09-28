@@ -17,9 +17,14 @@ import { dataTagsIcon } from "../../../../constants"
 import { NorthWest } from '@mui/icons-material';
 import { useInView } from "react-intersection-observer";
 import Link from 'next/link';
+import { selectDictionary, selectSystemLanguage } from '@/store/slice/languageSlice';
+import { useSelector } from 'react-redux';
 
 
-const ShowTags = ({ Language, dic }) => {
+const ShowTags = () => {
+
+    const dic = useSelector((state) => selectDictionary(state))
+    const Language = useSelector((state) => selectSystemLanguage(state))
 
     const { ref, inView } = useInView({
         triggerOnce: true,
@@ -45,7 +50,7 @@ const ShowTags = ({ Language, dic }) => {
                             },
                             textShadow: "1.5px 1.5px 2px grey"
                         }}>
-                            🧐 {Language.main.section3} 🧐
+                            🧐 {Language?.main?.section3} 🧐
                         </Typography>
                     } sx={{
                         py: {
@@ -63,7 +68,7 @@ const ShowTags = ({ Language, dic }) => {
                 justifyContent: "space-around",
             }}>
 
-                {Language.main.tages && Language.main.tages.map((dt, index) => (
+                {Language?.main?.tages && Language?.main?.tages?.map((dt, index) => (
 
                     <Zoom in={inView} ref={ref} style={{
                         transitionDelay: `${index + 4}90ms`

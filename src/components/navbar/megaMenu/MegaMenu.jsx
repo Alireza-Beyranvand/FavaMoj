@@ -1,18 +1,16 @@
 'use client'
 
 import { useState } from "react";
-import { Button, Box, Card, Divider, Link, Fade, Tooltip, Typography } from "@mui/material";
+import { Button, Box, Card, Divider, Fade, Tooltip, Typography } from "@mui/material";
 import { ExpandMore } from "@mui/icons-material";
+import Link from "next/link";
 
 
 const MegaMenu = ({ active, options, buttonName }) => {
 
-    console.log(active)
-
     const [open, setOpen] = useState(false);
 
     // open / close megaMEnu
-
 
     const handleClick = () => {
         setOpen(true);
@@ -64,15 +62,11 @@ const MegaMenu = ({ active, options, buttonName }) => {
                                         title={opt.link}
                                         arrow
                                         placement="left" >
-                                        <Link href={opt.link}
-                                            sx={{
-                                                my: 1,
-                                                color: "white",
-                                                cursor: "pointer",
-                                                textDecoration: "none",
-                                                fontFamily: "vazir",
-                                                mx: "auto", px: 2
-                                            }}>
+                                        <Link href={opt.link} style={{
+                                            display: "flex",
+                                            justifyContent: "center",
+                                            padding: ".5rem"
+                                        }}>
                                             <Typography variant="body1">
                                                 {opt.name}
                                             </Typography>

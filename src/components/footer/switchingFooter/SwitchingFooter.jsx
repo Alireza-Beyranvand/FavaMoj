@@ -5,7 +5,7 @@ import { Box } from "@mui/material"
 import FooterPc from "./pc/FooterPc";
 import FooterMobile from "./mobile/FooterMobile";
 
-const SwitchingFooter = ({ Language, dict }) => {
+const SwitchingFooter = () => {
 
 
   return (
@@ -16,7 +16,7 @@ const SwitchingFooter = ({ Language, dict }) => {
           md: "block"
         },
       }}>
-        <FooterPc Language={Language} dict={dict} />
+        <FooterPc />
       </Box>
       <Box sx={{
         display: {
@@ -24,7 +24,7 @@ const SwitchingFooter = ({ Language, dict }) => {
           md: "none"
         }, mt: 5
       }}>
-        <FooterMobile Language={Language} dict={dict} />
+        <FooterMobile />
       </Box>
     </>
   )

@@ -15,11 +15,17 @@ import { alphabetEnglish, alphabetPersian } from "@/src/constants/index";
 import bg from "../../../../assets/background.jpg";
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import Loading from "@/app/[Languages]/loading";
-import toast from "react-hot-toast";
+import Loading from "@/app/loading";
+import { useSelector } from "react-redux";
+import { selectDictionary, selectSystemLanguage } from "@/store/slice/languageSlice";
 
 
-export default function Section1({ Language, dic }) {
+export default function Section1() {
+
+
+    const dic = useSelector((state) => selectDictionary(state))
+    const Language = useSelector((state) => selectSystemLanguage(state))
+
 
     const [open, setOpen] = useState(false);
     // for transition text
@@ -63,7 +69,7 @@ export default function Section1({ Language, dic }) {
                             justifyContent: "center",
                             mt: {
                                 xs: 3,
-                                md: -2
+                                md: -5
                             }
                         }}>
                             <Box sx={{
@@ -73,29 +79,29 @@ export default function Section1({ Language, dic }) {
                             }}>
                                 <Typography color="whitesmoke" sx={{
                                     fontSize: {
-                                        xs: "2.2rem",
-                                        md: "3.8rem"
+                                        xs: "2.6rem",
+                                        md: "4.5rem"
                                     },
 
                                     textShadow: "3px 5px black , 2px 2px 10px #606060",
                                 }}>
                                     <RandomReveal isPlaying
                                         duration={3}
-                                        characters={Language.main.name}
-                                        characterSet={dic.startsWith("en") ? alphabetEnglish : alphabetPersian}
+                                        characters={Language?.main?.name}
+                                        characterSet={dic === "en-us" ? alphabetEnglish : alphabetPersian}
                                     />
                                 </Typography>
                                 <Typography color="whitesmoke" sx={{
                                     fontSize: {
                                         xs: "2.1rem",
-                                        md: "2.5rem"
+                                        md: "2.6rem"
                                     },
                                     textShadow: "3px 5px black , 2px 2px 10px #606060",
                                 }}>
                                     <RandomReveal isPlaying
                                         duration={4}
-                                        characters={Language.main.name2}
-                                        characterSet={dic.startsWith("en") ? alphabetEnglish : alphabetPersian} />
+                                        characters={Language?.main?.name2}
+                                        characterSet={dic === "en-us" ? alphabetEnglish : alphabetPersian} />
                                 </Typography>
                             </Box>
                             <Box>
@@ -107,7 +113,7 @@ export default function Section1({ Language, dic }) {
                                     textShadow: "3px 4px #3c3c3c"
                                 }}>
                                     <TextTransition springConfig={presets.wobbly}>
-                                        {Language.main.transition[index % Language.main.transition.length]}
+                                        {Language?.main?.transition[index % Language?.main?.transition.length]}
                                     </TextTransition>
                                     _#
                                 </Typography>
@@ -132,7 +138,7 @@ export default function Section1({ Language, dic }) {
                                             gap: 1
                                         }}>
                                         <Typography variant="h6" color="dark" sx={{ fontWeight: 900 }}>
-                                            {Language.main.buttonGo}
+                                            {Language?.main?.buttonGo}
                                         </Typography>
                                         < Bolt sx={{ fontSize: "1.8rem", color: "black" }} />
                                     </Button>
@@ -151,7 +157,7 @@ export default function Section1({ Language, dic }) {
                                             gap: 1
                                         }}>
                                         <Typography variant="h6" sx={{ fontWeight: 900 }}>
-                                            {Language.main.buttonRepresentation}
+                                            {Language?.main?.buttonRepresentation}
                                         </Typography>
                                         <Business sx={{ fontSize: "1.8rem" }} />
                                     </Button>

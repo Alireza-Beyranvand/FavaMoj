@@ -1,9 +1,13 @@
 
 import CredentialsProvider from "next-auth/providers/credentials";
-
+import GithubProvider from "next-auth/providers/github";
 
 export const options = {
     providers: [
+        GithubProvider({
+            clientId: process.env.GITHUB_APPID,
+            clientSecret: process.env.GITHUB_SECRET
+        }),
         CredentialsProvider({
             name: "Credentials",
             credentials: {
@@ -34,9 +38,10 @@ export const options = {
                     return null
                 }
             }
-        })
+        }),
     ],
     pages: {
-        signIn: '/fa/auth/login',  // آدرس صفحه ورودی شما  
+        signIn: '/fa/auth/login',
+        signOut: '/fa/auth/logout'
     },
 }

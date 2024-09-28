@@ -2,17 +2,18 @@ import { Box } from "@mui/material";
 import MegaMenu from "@/src/components/navbar/megaMenu/MegaMenu";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useSelector } from "react-redux";
+import { selectSystemLanguage } from "@/store/slice/languageSlice";
 
-const NavLink = ({ Language, dict }) => {
-
-
-    // const { buttonName, link, active, Language } = props;
-    const optionsMegaMenu = Language?.navbar.megaMenu;
-
+const NavLink = () => {
 
     // current Location
     const route = usePathname();
 
+    const Language = useSelector((state) => selectSystemLanguage(state))
+
+    // const { buttonName, link, active, Language } = props;
+    const optionsMegaMenu = Language?.navbar?.megaMenu;
 
 
     return (
@@ -29,13 +30,13 @@ const NavLink = ({ Language, dict }) => {
                 md: "flex"
             }}>
             <MegaMenu Language={Language}
-                buttonName={dict.startsWith("en") ? "Contact us" : "ارتباط با ما"}
+                buttonName={Language?.navbar?.megaMenuButtonName}
                 options={optionsMegaMenu}
             />
-            {Language.navbar.navLink && Language.navbar.navLink.map((ND, index) => (
+            {Language.navbar?.navLink && Language.navbar?.navLink.map((ND, index) => (
                 <Link href={ND.links} key={index}>
                     <MegaMenu buttonName={ND.title}
-                        active={route.split("/fa" || "/en-us").includes(ND.links) ? true : false}
+                        active={route === ND.links ? true : false}
                         options={ND.items && ND.items[index]}
                     />
                 </Link>

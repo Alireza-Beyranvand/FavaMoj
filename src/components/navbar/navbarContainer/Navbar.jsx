@@ -3,12 +3,8 @@
 import { useState } from 'react';
 import {
     AppBar,
-    Avatar,
     Box,
-    Button,
-    Fab,
     Toolbar,
-    Typography,
     useScrollTrigger,
 } from '@mui/material';
 
@@ -19,12 +15,9 @@ import CartButton from "../cartButton/CartButton";
 import NavbarSearch from '../navbarSearch/NavbarSearch';
 import Menu from "../menu/Menu";
 import InforamtionUser from '@/src/InformationUser/InforamtionUser';
-import Link from 'next/link';
-import { Login } from '@mui/icons-material';
 
 
-const Navbar = ({ Language, dict }) => {
-
+const Navbar = () => {
 
     const [openDrawer, setOpenDrawer] = useState(false)
 
@@ -50,7 +43,7 @@ const Navbar = ({ Language, dict }) => {
                 py: 2.5
             }}>
                 <Toolbar>
-                    <NavbarSearch Language={Language} dict={dict} />
+                    <NavbarSearch />
                     <Box sx={{
                         flexGrow: .1,
                         display: {
@@ -59,20 +52,16 @@ const Navbar = ({ Language, dict }) => {
                         },
                         gap: 5
                     }}>
-                        {/* cart Button Shop */}
-                        <CartButton Language={Language} />
+                        <CartButton />
                     </Box>
-                    {/* NavLinks */}
-                    <NavLink trigger={trigger} Language={Language} dict={dict} />
-                    {/* information user */}
+                    <NavLink trigger={trigger} />
                     <Box sx={{
                         display: {
                             xs: "none",
                             md: "block"
                         }
                     }}>
-                        {/* log bu */}
-                        <InforamtionUser Language={Language} />
+                        <InforamtionUser />
                     </Box>
                     <Box sx={{
                         textAlign: "end",
@@ -81,8 +70,7 @@ const Navbar = ({ Language, dict }) => {
                             md: 3
                         },
                     }}>
-                        {/* logo and menuIcon */}
-                        <LogoAndMenu setOpenDrawer={setOpenDrawer} Language={Language} />
+                        <LogoAndMenu setOpenDrawer={setOpenDrawer} />
                     </Box>
                 </Toolbar>
             </AppBar>

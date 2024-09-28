@@ -18,14 +18,18 @@ import {
 import logo from "@/src/assets/logo.png";
 import Link from "next/link";
 import Image from "next/image";
+import { selectSystemLanguage } from "@/store/slice/languageSlice";
+import { useSelector } from "react-redux";
 
 
-export default function FooterXs({ Language }) {
+export default function FooterXs() {
+
+  const Language = useSelector((state) => selectSystemLanguage(state))
 
   return (
     <Box>
       {
-        Language.main.informationFooter && Language.main.informationFooter.map((fd, indexAll) => (
+        Language && Language?.main?.informationFooter.map((fd, indexAll) => (
           <Accordion sx={{
             mt: 1, direction: "rtl", color: "black",
             backgroundColor: "#ec8d10", border: "1px solid red"

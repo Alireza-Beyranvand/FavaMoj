@@ -11,8 +11,13 @@ import {
 import { socialMedia } from "@/src/constants/socialMedia";
 
 import Link from "next/link";
+import { useSelector } from "react-redux";
+import { selectSystemLanguage } from "@/store/slice/languageSlice";
 
-export default function SocialMedia({ Language, dic }) {
+export default function SocialMedia() {
+
+
+    const Language = useSelector((state) => selectSystemLanguage(state))
 
     const view = useScrollTrigger({
         threshold: 1,
@@ -37,7 +42,7 @@ export default function SocialMedia({ Language, dic }) {
                             sm: "3rem"
                         },
                         textShadow: "2px 2px 5px black,-2px -2px 5px black "
-                    }} className="text-log">{Language.main.socialMediaTitle}</Typography>
+                    }} className="text-log">{Language?.main?.socialMediaTitle}</Typography>
                 </Zoom>
 
                 <Box sx={{

@@ -7,6 +7,8 @@ import Image from "next/image";
 
 
 const LogoAndMenu = ({ setOpenDrawer }) => {
+
+
   return (
     <>
       <Box sx={{

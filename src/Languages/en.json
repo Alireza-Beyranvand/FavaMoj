@@ -14,6 +14,8 @@
         "buttonGo": "Let's go",
         "buttonRepresentation": "Representatives",
         "socialMediaTitle": "! Follow us",
+        "applicationInstallButton": "Install Application",
+        "descriptionInstallingApplication": "You can have our program as a mobile application!",
         "section3": "What services does our company offer?",
         "tages": [
             {
@@ -162,7 +164,12 @@
                 "link": "/admin"
             }
         ],
+        "megaMenuButtonName": "Contact",
         "buttonShop": "Shop",
         "searchBox": "Search..."
+    },
+    "about": {
+        "dividerChip1": "manager",
+        "dividerChip2": "persenel"
     }
 }

@@ -1,10 +1,16 @@
 'use client';
 
+import { fetchLang, setlanguage } from "@/store/slice/languageSlice";
 import { Box, Button, Typography } from "@mui/material";
 import { useRouter } from "next/navigation";
 import toast from "react-hot-toast";
+import { useDispatch } from "react-redux";
+
+
 
 export default function selectingLanguage() {
+
+    const dispatch = useDispatch();
 
     const router = useRouter();
     // set Cookie 
@@ -19,7 +25,7 @@ export default function selectingLanguage() {
             const response = await request.json();
             // the result
             if (request.ok) {
-                router.push("/")
+                router.refresh()
                 toast.success(`${response.message}`, {
                     style: {
                         borderRadius: '10px',

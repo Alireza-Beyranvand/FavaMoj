@@ -74,7 +74,7 @@ export default function login() {
             }}>
                 <Grid size={{ xs: 0, lg: 5 }} sx={{ display: { xs: "none", lg: "block" } }}>
                     <Image src={bg} style={{
-                        width: "28vw", height: "59.5vh",
+                        width: "29vw", height: "59.5vh",
                         display: "flex",
                         borderRadius: "3rem 1rem 1rem 3rem"
                     }} />
@@ -88,7 +88,10 @@ export default function login() {
                         textAlign: "center",
                         display: "flex",
                         flexDirection: "column",
-                        gap: 3.7
+                        gap: 3.7,
+                        borderRadius: 5,
+                        boxShadow: 10,
+                        p: 3
                     }}>
                         <Box sx={{ pt: 2 }}>
                             <Typography variant="h4">
@@ -185,17 +188,7 @@ export default function login() {
                             یا
                         </Divider>
                         <Box sx={{ display: "flex", justifyContent: "space-evenly", }}>
-                            <Fab size="small" color="warning">
-                                <Typography color="black" variant="body1">
-                                    <GitHub sx={{ verticalAlign: "middle" }} />
-                                </Typography>
-                            </Fab>
-                            <Fab size="small" color="warning">
-                                <Typography color="black" variant="body1">
-                                    <GitHub sx={{ verticalAlign: "middle" }} />
-                                </Typography>
-                            </Fab>
-                            <Fab size="small" color="warning">
+                            <Fab size="small" color="warning" onClick={() => signIn("github", { callbackUrl: "/" })}>
                                 <Typography color="black" variant="body1">
                                     <GitHub sx={{ verticalAlign: "middle" }} />
                                 </Typography>

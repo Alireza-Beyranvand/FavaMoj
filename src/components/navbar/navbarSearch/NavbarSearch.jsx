@@ -6,8 +6,17 @@ import { Search } from '@mui/icons-material';
 // components
 import CustModal from "@/src/common/Modal/CustModal";
 import SearchInput from "./Input/SearchInput";
+import { useSelector } from "react-redux";
+import { selectDictionary, selectSystemLanguage } from "@/store/slice/languageSlice";
 
-const NavbarSearch = ({ Language, dict }) => {
+const NavbarSearch = () => {
+
+
+    const dict = useSelector((state) => selectDictionary(state))
+    const Language = useSelector((state) => selectSystemLanguage(state))
+
+
+
 
     //for Open Modal
     const [openModal, setOpenModal] = useState(false);

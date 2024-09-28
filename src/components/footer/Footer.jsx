@@ -7,34 +7,18 @@ import SwitchingFooter from "./switchingFooter/SwitchingFooter";
 import LogoEnum from "./section3/logoEnum/LogoEnum";
 import Map from "./section3/map/Map";
 import LastFooter from "./sectionLast/LastFooter";
+import DividerTags from "./divider/DividerTags";
 
 
 
-
-export default function Footer({ Language, dict }) {
+export default function Footer() {
 
     return (
         <>
             <Box sx={{ backgroundColor: "black", mt: 45, height: "120vh" }}>
-                {/* box email */}
-                <EmailBox Language={Language} dict={dict} />
-                <Box >
-                    <Divider
-                        sx={{
-                            "&::before , &::after": {
-                                borderColor: "#ec8d10"
-                            }
-                        }} >
-                        <Typography sx={{
-                            backgroundColor: "warning.main",
-                            color: "black", px: 3, py: 1, borderRadius: 5
-                        }}>
-                            {Language.main.label}
-                        </Typography>
-                    </Divider>
-                </Box>
-                {/* swichin footer when responsiv for mobile */}
-                <SwitchingFooter Language={Language} dict={dict} />
+                <EmailBox />
+                <DividerTags />
+                <SwitchingFooter />
                 <Divider sx={{
                     borderColor: "#ec8d10",
 
@@ -52,7 +36,6 @@ export default function Footer({ Language, dict }) {
                         md: 0
                     }
                 }}>
-                    {/* enum logo */}
                     <LogoEnum />
                     <Grid size={{
                         xs: 12,
@@ -65,16 +48,13 @@ export default function Footer({ Language, dict }) {
                             md: 0
                         }
                     }}>
-                        {/* Google Map */}
                         <Map />
                     </Grid>
                 </Grid>
                 <Box>
                 </Box>
-                <Divider sx={{
-                    borderColor: "#ec8d10",
-                }} />
-                <LastFooter Language={Language} dict={dict} />
+                <Divider sx={{ borderColor: "#ec8d10" }} />
+                <LastFooter />
             </Box >
         </>
 

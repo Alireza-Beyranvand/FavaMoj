@@ -3,18 +3,14 @@
 import {
     Box,
     Fab,
-    useMediaQuery,
     useScrollTrigger
 } from '@mui/material';
 import {
     KeyboardArrowDown
 } from '@mui/icons-material';
-import { useEffect, useState } from 'react';
 
 
 const ScrollTop = () => {
-
-
 
 
     // off when scroll
@@ -23,8 +19,6 @@ const ScrollTop = () => {
         threshold: 1,
         disableHysteresis: true
     });
-
-
 
 
     return (

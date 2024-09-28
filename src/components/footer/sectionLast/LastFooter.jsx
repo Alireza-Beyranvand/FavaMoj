@@ -1,13 +1,17 @@
-'use server'
+'use client'
 
 import { Typography } from "@mui/material"
 import Grid from "@mui/material/Grid2";
 import { Copyright } from "@mui/icons-material";
 import { img4, img5 } from "@/src/assets/enum/index";
 import Image from "next/image";
+import { useSelector } from "react-redux";
+import { selectSystemLanguage } from "@/store/slice/languageSlice";
 
 
-const LastFooter = ({ Language }) => {
+const LastFooter = () => {
+
+    const Language = useSelector((state) => selectSystemLanguage(state))
 
 
     return (
@@ -54,7 +58,7 @@ const LastFooter = ({ Language }) => {
                         }
                     }}>
                         <Copyright sx={{ verticalAlign: "middle", mr: 1 }} />
-                        {Language.main.footerLast}
+                        {Language?.main?.footerLast}
                     </Typography>
 
                 </Grid>

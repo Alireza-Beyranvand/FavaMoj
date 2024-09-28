@@ -1,12 +1,17 @@
 
 
+import { selectSystemLanguage } from "@/store/slice/languageSlice";
 import { ShoppingCartOutlined } from "@mui/icons-material";
 import { Avatar, Button, Tooltip, Typography } from "@mui/material";
 
 import Link from "next/link";
+import { useSelector } from "react-redux";
 
 
-const CartButton = ({ Language }) => {
+const CartButton = () => {
+
+    const Language = useSelector((state) => selectSystemLanguage(state))
+
     return (
         <>
             <Link href='/shop' target="_blank" rel="noopener noreferrer">
@@ -48,7 +53,7 @@ const CartButton = ({ Language }) => {
                             mx: .9,
                             mt: .4
                         }}>
-                            {Language.navbar.buttonShop}
+                            {Language?.navbar?.buttonShop}
                         </Typography>
                     </Button>
                 </Tooltip>

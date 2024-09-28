@@ -12,11 +12,15 @@ import Image from "next/image";
 import Link from 'next/link';
 
 // next auth
-import { signOut } from 'next-auth/react';
 import { useSession } from "next-auth/react"
+import { useSelector } from 'react-redux';
+import { selectDictionary, selectSystemLanguage } from '@/store/slice/languageSlice';
 
 
-export default function InforamtionUser({ Language }) {
+export default function InforamtionUser() {
+
+    const Language = useSelector((state) => selectSystemLanguage(state))
+
 
     // session next-auth
     const { data: session } = useSession({
@@ -112,24 +116,26 @@ export default function InforamtionUser({ Language }) {
                         <ListItemIcon>
                             <Settings fontSize="small" />
                         </ListItemIcon>
-                        تنظیمات
+                        {Language?.navbar?.SignIn?.Settings}
                     </MenuItem>
                     <MenuItem onClick={handleClose}>
-                        <Box sx={{ display: "flex" }} onClick={() => signOut()}>
-                            <ListItemIcon >
-                                <Logout fontSize="small" sx={{ pt: .3 }} />
-                            </ListItemIcon>
-                            <Typography>
-                                {Language.navbar.SignIn.SignOut}
-                            </Typography>
-                        </Box>
+                        <Link href={"/auth/logout"} style={{ color: "black" }}>
+                            <Box sx={{ display: "flex" }}>
+                                <ListItemIcon>
+                                    <Logout fontSize="small" sx={{ pt: .3 }} />
+                                </ListItemIcon>
+                                <Typography>
+                                    {Language?.navbar?.SignIn?.SignOut}
+                                </Typography>
+                            </Box>
+                        </Link>
                     </MenuItem>
                 </Menu>
             </>) : (
             <Link href={"/auth/login"}>
                 <Button variant='contained' color='warning'>
                     <Typography color='black' variant='subtitle2'>
-                        {Language.navbar.SignIn.ButtonName}
+                        {Language?.navbar?.SignIn?.ButtonName}
                     </Typography>
                     <Login sx={{ color: "black", px: .5 }} />
                 </Button>
